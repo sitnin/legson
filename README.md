@@ -16,24 +16,28 @@ Library exports a default class named LegSON
 
     "use strict";
 
-    const LegSON = require("legson");
+    const LegSON = require("./lib/index.js");
 
     const opts = {
-        maxValueLength: 250,
+        maxValueLength: 100,
         nullNonExistent: true,
-        addLoaders: [
-            [/^@test:\/\//, value => {
+        parseArrays: true,
+        addPlugins: {
+            "test": value => {
                 return new Promise.resolve(value);
-            }],
-        ],
+            },
+        },
     };
 
     const loader = new LegSON(opts);
-    loader.load("path/to/root/file.json").then(obj => {
+    loader.load("file.json").then(obj => {
+        console.log(loader._opts);
         console.log(obj);
     }).catch(err => {
         console.error(err.stack || err.message);
     });
+
+**Important:** any pathnames inside loaded JSON files will NOT be expanded or normalized. They always will be searched from the current directory. You should use absolute paths if you can't set working directory to the root json's folder.
 
 ## Methods
 
@@ -57,7 +61,12 @@ If `true` every loader-matched but failed values will be nullified. Otherwise, v
 
 ### addLoaders (array of arrays, no default value)
 
-Additional value loaders array. Should consists of pairs of `[regexp, processor]` where processor should be a function returning value or promise of value.
+Additional value loaders dictionary. Where the key of the array is a prefix for `@[prefix]` pattern matching and value is a function returning new value or promise of a value.
+
+## TODO
+
+- Write tests for configuration options
+- Resolve issue with dataPath patching (conflicts with url loader)
 
 ## Contacts
 

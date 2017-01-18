@@ -1,0 +1,4 @@
+{
+    // should patse this file
+    test: "json5 parsed!"
+}

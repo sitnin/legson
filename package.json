@@ -1,0 +1,32 @@
+{
+  "name": "legson",
+  "version": "1.0.0",
+  "description": "Lego-like JSON loader",
+  "keywords": ["json", "loader", "extensible", "merger", "constructor", "lego"],
+  "homepage": "https://github.com/sitnin/legson",
+  "bugs": {
+    "url": "https://github.com/sitnin/legson/issues",
+    "email": "greg@sitnin.com"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/sitnin/legson.git"
+  },
+  "author": "Gregory Sitnin <greg@sitnin.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "cd ./test/data && pwd && ../../node_modules/.bin/mocha ../"
+  },
+  "dependencies": {
+    "asyncawait": "^1.0.6",
+    "json5": "^0.5.1",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}
