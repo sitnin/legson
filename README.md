@@ -49,9 +49,9 @@ Creates new LegSON object with configuration
 
 Return promise of JSON object value which will be fulfilled when all values will be processed
 
-## Options
+## Configuration options
 
-### maxValueLength (integer, default: 250)
+### maxValueLength (integer, default: 100)
 
 Sets maximum key value length that will be checked with loaders
 
@@ -62,6 +62,10 @@ If `true` every loader-matched but failed values will be nullified. Otherwise, v
 ### addLoaders (array of arrays, no default value)
 
 Additional value loaders dictionary. Where the key of the array is a prefix for `@[prefix]` pattern matching and value is a function returning new value or promise of a value.
+
+### processArrays
+
+If `true` values inside arrays will be processed as well. Otherwise arrays will be left itact.
 
 ## TODO
 
