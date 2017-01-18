@@ -3,13 +3,13 @@
 const LegSON = require("./lib/index.js");
 
 const opts = {
-    maxValueLength: 250,
+    maxValueLength: 100,
     nullNonExistent: true,
-    addPlugins: [
-        [/^@test:\/\//, value => {
+    addPlugins: {
+        "test": value => {
             return new Promise.resolve(value);
-        }],
-    ],
+        },
+    },
 };
 
 const loader = new LegSON(opts);
