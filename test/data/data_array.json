@@ -1,4 +1,5 @@
 [
-    "j5": "@json://data_5.json",
-    "another": "value"
+    "@[json]data_5.json",
+    "value",
+//    "@[url]http://nodejs.org"
 ]

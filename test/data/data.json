@@ -1,8 +1,8 @@
 {
     "foo": "bar",
     "baz": 123,
-    "arr": "@json://data_array.json",
+    "arr": "@[json]data_array.json",
     "inner": {
-        "md": "@md://data.md"
+        "md": "@[md]data.md"
     }
 }

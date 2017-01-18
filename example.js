@@ -5,6 +5,7 @@ const LegSON = require("./lib/index.js");
 const opts = {
     maxValueLength: 100,
     nullNonExistent: true,
+    parseArrays: true,
     addPlugins: {
         "test": value => {
             return new Promise.resolve(value);
