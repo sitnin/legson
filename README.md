@@ -16,7 +16,7 @@ Library exports a default class named LegSON
 
     "use strict";
 
-    const LegSON = require("./lib/index.js");
+    const LegSON = require("legson");
 
     const opts = {
         maxValueLength: 100,
