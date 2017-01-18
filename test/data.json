@@ -1,0 +1,8 @@
+{
+    "foo": "bar",
+    "baz": 123,
+    "arr": "@json://data_array.json",
+    "inner": {
+        "md": "@md://data.md"
+    }
+}
