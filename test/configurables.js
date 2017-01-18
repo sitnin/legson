@@ -15,4 +15,8 @@ describe("Configurables", () => {
         it("when true");
         it("when false");
     });
+
+    describe("addLoaders", () => {
+        it("triggers");
+    });
 });

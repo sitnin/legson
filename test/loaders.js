@@ -1,6 +1,15 @@
 "use strict";
 
 const should = require('should');
+const crypto = require('crypto');
+
+const TEST_URL = "http://nodejs.org";
+
+function sha1 (str) {
+    const hash = crypto.createHash('sha1');
+    hash.update(str);
+    return hash.digest("hex");
+}
 
 describe("Loaders", () => {
     describe("Bundled", () => {
@@ -27,9 +36,24 @@ describe("Loaders", () => {
             });
         });
 
-        it("markdown");
-        it("url");
-    });
+        it("markdown", () => {
+            const load = require("../lib/loaders/markdown");
 
-    it("Additional");
+            //noinspection JSUnresolvedFunction
+            return load("./test/data/data.md").then(data => {
+                should(data).instanceOf(String);
+                should(sha1(data)).equal("49d0ef429b702d8a8f8067b26ff7b4ada336e0ee");
+            });
+        });
+
+        it("url", () => {
+            const load = require("../lib/loaders/url");
+
+            //noinspection JSUnresolvedFunction
+            return load(TEST_URL).then(data => {
+                should(data).instanceOf(String);
+                should(data).startWith("<!DOCTYPE html>");
+            });
+        });
+    });
 });
