@@ -4,7 +4,7 @@
   "description": "Lego-like JSON loader",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "author": "Gregory Sitnin <greg@sitnin.com>",
   "license": "MIT",
