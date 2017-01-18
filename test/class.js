@@ -6,29 +6,28 @@ const should = require('should');
 
 describe("Class", () => {
     it("creates an object with defaults", () => {
-        const t = new LegSON();
+        const obj = new LegSON();
 
-        should(t).instanceOf(LegSON);
-
-        should(t).have.property('_opts', {
-            maxValueLength: 250,
-            nullNonExistent: true,
-            addPlugins: [],
-        });
+        should(obj).instanceOf(LegSON);
+        should(obj).have.property('_opts');
+        should(obj).have.propertyByPath("_opts", "maxValueLength").Number(100);
+        should(obj).have.propertyByPath("_opts", "nullNonExistent").true();
+        should(obj).have.propertyByPath("_opts", "addPlugins").empty();
     });
 
     it("creates an object with overrides", () => {
-        const t = new LegSON({
-            maxValueLength: 100,
-            nullNonExistent: false
-        });
-
-        should(t).instanceOf(LegSON);
-
-        should(t).have.property('_opts', {
-            maxValueLength: 100,
+        const obj = new LegSON({
+            maxValueLength: 1000,
             nullNonExistent: false,
-            addPlugins: [],
+            addPlugins: {
+                "test": val => { return val }
+            }
         });
+
+        should(obj).instanceOf(LegSON);
+        should(obj).have.property("_opts");
+        should(obj).have.propertyByPath("_opts", "maxValueLength").Number(1000);
+        should(obj).have.propertyByPath("_opts", "nullNonExistent").false();
+        should(obj).have.propertyByPath("_opts", "addPlugins", "test").Function();
     });
 });
