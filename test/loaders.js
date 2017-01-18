@@ -44,7 +44,7 @@ describe("Loaders", () => {
             });
         });
 
-        // WARNING: Switched off but working (trust me, I'm a doctor)
+        // WARNING: Switched off but it's working (trust me, I'm a doctor)
         //it("url", () => {
         //    const load = require("../lib/loaders/url");
         //
