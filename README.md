@@ -69,6 +69,7 @@ If `true` values inside arrays will be processed as well. Otherwise arrays will 
 
 ## TODO
 
+- Add "asis" loader for loading file contents without processing
 - Write tests for configuration options
 - Resolve issue with dataPath patching (conflicts with url loader)
 
