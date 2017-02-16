@@ -1,6 +1,6 @@
 {
   "name": "legson",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lego-like JSON loader",
   "keywords": ["json", "loader", "extensible", "merger", "constructor", "lego"],
   "homepage": "https://github.com/sitnin/legson",

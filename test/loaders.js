@@ -44,6 +44,16 @@ describe("Loaders", () => {
             });
         });
 
+        it("raw", () => {
+            const load = require("../lib/loaders/raw");
+
+            //noinspection JSUnresolvedFunction
+            return load("data.txt").then(data => {
+                should(data).instanceOf(String);
+                should(sha1(data)).equal("5e2940cdcafe52671b1821c6d60ff43690284148");
+            });
+        });
+
         // WARNING: Switched off but it's working (trust me, I'm a doctor)
         //it("url", () => {
         //    const load = require("../lib/loaders/url");

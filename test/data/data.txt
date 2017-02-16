@@ -1,0 +1,3 @@
+{
+    "message": "This file is a json, but should not be parsed at all. It's just a raw text data."
+}

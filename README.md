@@ -49,9 +49,9 @@ Creates new LegSON object with configuration
 
 Return promise of JSON object value which will be fulfilled when all values will be processed
 
-## Options
+## Configuration options
 
-### maxValueLength (integer, default: 250)
+### maxValueLength (integer, default: 100)
 
 Sets maximum key value length that will be checked with loaders
 
@@ -63,8 +63,36 @@ If `true` every loader-matched but failed values will be nullified. Otherwise, v
 
 Additional value loaders dictionary. Where the key of the array is a prefix for `@[prefix]` pattern matching and value is a function returning new value or promise of a value.
 
+### processArrays
+
+If `true` values inside arrays will be processed as well. Otherwise arrays will be left itact.
+
+## Bundled loaders
+
+Each source object key's value will be tested for `"@[loader]"` prefix. If prefix will be found, proper loader will be used to load real content of the particular key.
+
+Result of each loader will be parsed again like this contents was already there. This logic makes possible to include data recursively :)
+
+### @[raw]
+
+Will load file contents and will not do anything else. I.e. use this to load html which you will send to the browser.
+
+### @[json]
+
+Will load file contents and parse it with JSON5 library. Result is a json-object.
+
+### @[md]
+
+Loads file and parses it from markdown to html.
+
+### @[url]
+
+Performs get url request and returns raw reply body to the object's key.
+
 ## TODO
 
+- Write full documentation ;)
+- Add "asis" loader for loading file contents without processing
 - Write tests for configuration options
 - Resolve issue with dataPath patching (conflicts with url loader)
 
