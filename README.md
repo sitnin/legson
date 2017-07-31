@@ -51,6 +51,10 @@ Return promise of JSON object value which will be fulfilled when all values will
 
 ## Configuration options
 
+### basePath (string, default — process.cwd())
+
+Base directory to search for source files in case their are pointed via relative paths
+
 ### maxValueLength (integer, default: 100)
 
 Sets maximum key value length that will be checked with loaders
