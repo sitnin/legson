@@ -10,7 +10,7 @@ describe("Class", () => {
 
         should(obj).instanceOf(LegSON);
 
-        should(obj).have.property('_basePath', "./");
+        should(obj).have.property('_basePath', process.cwd());
 
         should(obj).have.property('_opts');
         should(obj).have.propertyByPath("_opts", "maxValueLength").Number(100);

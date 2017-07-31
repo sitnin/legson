@@ -2,15 +2,22 @@
   "name": "legson",
   "version": "1.0.4",
   "description": "Lego-like JSON loader",
-  "keywords": ["json", "loader", "extensible", "merger", "constructor", "lego"],
+  "keywords": [
+    "json",
+    "loader",
+    "extensible",
+    "merger",
+    "constructor",
+    "lego"
+  ],
   "homepage": "https://github.com/sitnin/legson",
   "bugs": {
     "url": "https://github.com/sitnin/legson/issues",
     "email": "greg@sitnin.com"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/sitnin/legson.git"
+    "type": "git",
+    "url": "https://github.com/sitnin/legson.git"
   },
   "author": "Gregory Sitnin <greg@sitnin.com>",
   "license": "MIT",
